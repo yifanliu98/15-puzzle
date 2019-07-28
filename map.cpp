@@ -192,7 +192,14 @@ void bfs_15691013() {
     // store the pattern database15691013 in a file    
     ofstream myfile;
     myfile.open ("database15691013.txt");
-    for (auto it = database15691013.begin(); it != database15691013.end(); ++it) myfile << it->first <<" " << it->second.first << '\n'; 
+    int I = 1;
+    for (auto it = database15691013.begin(); it != database15691013.end(); ++it) {
+        if(i == 1) {
+            myfile << it->first <<" " << it->second.first << '\n'; 
+            i++;
+        } else if(i == 10) i = 1;
+        else i++;
+    }
     myfile.close();
 }
 
@@ -208,7 +215,6 @@ void bfs_7811121415() {
     goal.push_back(32);
     goal.push_back(33);
 
-    int length = 1;
     myqueue.push(goal);
     database7811121415[goal] = make_pair(0,true);
     while(!myqueue.empty()) {
@@ -234,7 +240,6 @@ void bfs_7811121415() {
                 if(!database7811121415[move].second) {
                     myqueue.push(move);
                     database7811121415[move] = make_pair(database7811121415[parent].first + move234, true);
-                    length++;
                 }
             }
             else {
@@ -262,8 +267,6 @@ void bfs_7811121415() {
                 if(!database7811121415[move].second) {
                     myqueue.push(move);
                     database7811121415[move] = make_pair(database7811121415[parent].first + move234, true);
-                    length++;
-
                 }
             }
             else {
@@ -292,8 +295,6 @@ void bfs_7811121415() {
                 if(!database7811121415[move].second) {
                     myqueue.push(move);
                     database7811121415[move] = make_pair(database7811121415[parent].first + move234, true);
-                    length++;
-
                 }
             }
             else {
@@ -322,8 +323,6 @@ void bfs_7811121415() {
                 if(!database7811121415[move].second) {
                     myqueue.push(move);
                     database7811121415[move] = make_pair(database7811121415[parent].first + move234, true);
-                    length++;
-
                 }
             }
             else {
@@ -333,13 +332,19 @@ void bfs_7811121415() {
                 }
             }
         }
-        cout << length << endl;
     }
 
-    // store the pattern database7811121415 in a file    
+    // store the pattern database15691013 in a file    
     ofstream myfile;
-    myfile.open ("database7811121415.txt");
-    for (auto it = database7811121415.begin(); it != database7811121415.end(); ++it) myfile << it->first <<" " << it->second.first << '\n'; 
+    myfile.open ("database15691013.txt");
+    int I = 1;
+    for (auto it = database15691013.begin(); it != database15691013.end(); ++it) {
+        if(i == 1) {
+            myfile << it->first <<" " << it->second.first << '\n'; 
+            i++;
+        } else if(i == 10) i = 1;
+        else i++;
+    }
     myfile.close();
 }
 
